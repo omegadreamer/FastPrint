@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {% load static %}
+    <script src='{% static "practice.js" %}' defer></script>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+{% endblock %}
+
+{% block title %}FastPrint - Practice{% endblock %}
+
+{% block content %}
+    <input type="text" name="some_field" class="inputBox">
+    <span class="tapScreen">Tap screen to show keyboard and start</span>
+    <div class="sentenceContainer">
+        <div class="sentence">
+        <h2 id="completedLeters"></h2>
+        <span id="currentLetter"></span>
+        <h2 id="remainingLetters"></h2>
+        </div>
+    </div>
+    <div class="statsContainer">
+        <div class="stats">
+        <div class="Gross">
+            <h2>Gross WPM</h2>
+            <h2 id="grossWPM">0</h2>
+        </div>
+        <div class="Accuracy">
+            <h2>Accuray</h2>
+            <h2 id="accuracyPercentage">0%</h2>
+        </div>
+        </div>
+    </div>
+{% endblock %}
