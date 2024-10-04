@@ -9,24 +9,6 @@
 {% block title %}FastPrint - Practice{% endblock %}
 
 {% block content %}
-    <input type="text" name="some_field" class="inputBox">
-    <div class="sentenceContainer">
-        <div class="sentence">
-            <h2 id="completedLeters"></h2>
-            <span id="currentLetter"></span>
-            <h2 id="remainingLetters"></h2>
-        </div>
-    </div>
-    <div class="statsContainer">
-        <div class="stats">
-            <div class="Gross">
-                <h2>Gross WPM</h2>
-                <h2 id="grossWPM">0</h2>
-            </div>
-            <div class="Accuracy">
-                <h2>Accuray</h2>
-                <h2 id="accuracyPercentage">0%</h2>
-            </div>
-        </div>
-    </div>
+    <input type="text" class="InputBox" id="InputBox">
+    <h2 class="Words" id="Words"></h2>
 {% endblock %}
