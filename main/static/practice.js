@@ -16,9 +16,7 @@ let correctLetterCounter = 0;
 let currentWordLength = 1;
 let currentLetterCorrect = true;
 
-let margin = window.getComputedStyle(completedLeters)['margin-left']
-margin = parseInt(margin.substring(0, margin.length - 2))
-const fontWidth = window.innerWidth > 700 ? 21.6 : 11.6
+
 
 const paragraph = 'Абоба интернет-мем, возникший в 2021 году после появления шуточного видео с участием вымышленного кандидата в президенты России по фамилии Абоба'
 currentLetter.textContent = paragraph[0]
@@ -48,11 +46,7 @@ document.addEventListener('keypress', (event) => {
       letter.classList.add('wrong');
     }
 
-    if (event.key === ' ') { //update position of word once it is completed
-      margin = margin - currentWordLength*fontWidth;
-      completedLeters.style.marginLeft = `${margin}px`;
-      currentWordLength = 0;
-    }
+
 
     currentWordLength++;
     currentLetterCorrect = true;
