@@ -1,19 +1,13 @@
-* {
+body {
+  background: #191b1b;
   color: rgb(5, 5, 5);
   font: 700 16px "Roboto", sans-serif;
 }
 
-body {
-  background: #191b1b;
-}
-
 .Words {
-  color: #313535;
-  span{
-    color: red;
-  }
+  color: rgb(12, 12, 12);
 }
 
-.False {
+.False{
   color: red;
 }
