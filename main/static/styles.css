@@ -9,9 +9,11 @@ body {
 
 .Words {
   color: #313535;
+  span{
+    color: red;
+  }
 }
 
-.WordsF {
+.False {
   color: red;
 }
-
