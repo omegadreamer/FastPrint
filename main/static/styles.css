@@ -5,9 +5,11 @@ body {
 }
 
 .Words {
-  color: rgb(12, 12, 12);
-}
-
-.False{
-  color: red;
+  color: rgb(20, 20, 20);
+  False{
+    color: red;
+  }
+  Correct{
+    color: rgb(10, 10, 10);
+  }
 }
