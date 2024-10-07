@@ -3,12 +3,17 @@
 {% block head %}
     {% load static %}
     <script src='{% static "practice.js" %}' defer></script>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'practice.css' %}">
 {% endblock %}
 
 {% block title %}FastPrint - Practice{% endblock %}
 
 {% block content %}
     <input type="text" class="InputBox" id="InputBox">
-    <div class="Words" id="Words"></div>
+    <div class="Block" id="Block">
+        <div class="Words" id="Words"></div>
+        <button class="Button">Start</button>
+        <button class="Button">English</button>
+        <button class="Button">Words</button>
+    </div>
 {% endblock %}
