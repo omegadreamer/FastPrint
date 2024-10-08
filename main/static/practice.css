@@ -51,9 +51,12 @@ body{
 }
 
 .Block{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 17%;
+  width: 800px;
   .Words{
   }
   .Button{
-    
   }
 }
