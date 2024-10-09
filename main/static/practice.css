@@ -8,10 +8,9 @@ body{
 }
 
 .Words{
-  /*width*/
   display: block;
   width: 800px;
-  height: 105px;
+  height: 110px;
   border: 1px solid #2E9AFF;
 
   /*Font*/

@@ -2,6 +2,7 @@ import { WordList } from "./WordList.js" //list of all words
 
 // Const
 const inputbox = document.getElementById("InputBox");
+const restart = document.getElementById("Restart");
 
 // Variables
 let text = ""
@@ -9,12 +10,17 @@ let words_count = 25;
 let startTime;
 
 // Random words from 'WordList'
-function GetRandomWords(text) {
+function GetRandomWords() {
+  inputbox.value = ""
+  text = ""
   for (let i = 0; i < words_count; i++) {
     text += WordList[Math.floor(Math.random() * WordList.length)] + " ";
   }
-};
-document.getElementById('Words').innerHTML = GetRandomWords(text)
+  document.getElementById('Words').innerHTML = text
+};GetRandomWords()
+
+// Restart button
+restart.addEventListener('click', GetRandomWords)
 
 // Typing process
 document.getElementById("InputBox").addEventListener('input', function(event) {
