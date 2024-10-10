@@ -20,7 +20,12 @@ function GetRandomWords() {
 };GetRandomWords()
 
 // Active words amount
-  
+document.getElementById("WordsCount").addEventListener("click", function someFunction(event) {
+  if (words_count != event.target.innerHTML){
+    words_count = event.target.innerHTML
+    GetRandomWords()
+  }
+})
 
 // Restart button
 restart.addEventListener('click', GetRandomWords)
@@ -39,9 +44,9 @@ document.getElementById("InputBox").addEventListener('input', function(event) {
   }
   else{
     let wrong_half = String(inputbox.value)
-    for (let i = 0; inputbox.value[i] == text[i]; i++){
+    for (let i = 0; inputbox.value[i] == text[i]; i++) {
       wrong_half = wrong_half.replace(inputbox.value[i], "")}
-    words = String('<Correct>' + text.slice(0, input_half.length - wrong_half.length)+ '</Correct>' + '<False>' + wrong_half + '</False>' + text.slice(input_half.length - wrong_half.length, text.length))
+    words = String('<Correct>' + text.slice(0, input_half.length - wrong_half.length)+ '</-Correct>' + '<False>' + wrong_half + '</False>' + text.slice(input_half.length - wrong_half.length, text.length))
     document.getElementById("Words").innerHTML = words;
   }
 });

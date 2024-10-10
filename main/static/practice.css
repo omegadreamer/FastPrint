@@ -7,6 +7,7 @@ body{
   font: 700 16px "Roboto", sans-serif;
 }
 
+
 .Words{
   display: block;
   width: 800px;
@@ -15,7 +16,7 @@ body{
   font-size: 28px;
   text-align: left;
   False{
-    color: red;
+    color: rgb(155, 83, 92);
     text-decoration: underline;
   }
   Correct{
@@ -23,10 +24,6 @@ body{
   }
 }
 
-.ButtonBG{
-  display: inline-block;
-  background-color: rgb(36, 36, 36);
-}
 
 .Button{
   display: inline-block;
@@ -50,14 +47,18 @@ body{
 }
 
 
-
 .Block{
   margin-left: auto;
   margin-right: auto;
   margin-top: 17%;
   width: 800px;
-  /*.Words{
+  .Words{
+    margin-bottom: 10px;
   }
-  .Button{
-  }*/
+}
+
+
+.ButtonBG{
+  display: inline-block;
+  background-color: rgb(36, 36, 36);
 }
