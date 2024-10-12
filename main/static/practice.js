@@ -10,7 +10,7 @@ const lenguage = document.getElementById("Lenguage")
 // Variables
 let text = "";
 let words_count = 25;
-let current_lenguage = 0;
+let current_lenguage = 1;
 let startTime;
 let lenguages = {
   0:{
