@@ -5,13 +5,16 @@ import { WordListRus, WordListEng } from "./WordList.js" //list of all words
 const inputbox = document.getElementById("InputBox");
 const restart = document.getElementById("Restart");
 const lenguage = document.getElementById("Lenguage")
+const Words = document.getElementById("Words")
+const Mistakes = document.getElementById("Mistakes")
 
 
 // Variables
 let text = "";
 let words_count = 25;
 let current_lenguage = 1;
-let startTime;
+let startTime = 0;
+let mistakes = [0,0];
 let lenguages = {
   0:{
     list: WordListRus,
@@ -32,7 +35,9 @@ function GetRandomWords() {
   for (let i = 0; i < words_count; i++) {
     text += cur_list[Math.floor(Math.random() * cur_list.length)] + " ";
   }
-  document.getElementById('Words').innerHTML = text;
+  Words.innerHTML = text;
+  mistakes = [0,0]
+  Mistakes.innerHTML = "Mistakes: 0"
 };GetRandomWords();
 
 
@@ -70,11 +75,24 @@ inputbox.addEventListener('input', function(event) {
     GetRandomWords();
   }else if(text.slice(0, input_half.length) == inputbox.value){
     words = String('<Correct>' + text.slice(0, input_half.length) + '</Correct>' + text.slice(input_half.length, text.length));
-    document.getElementById("Words").innerHTML = words;
+    Words.innerHTML = words;
   }else{
     let wrong_half = String(inputbox.value);
     for (let i = 0; inputbox.value[i] == text[i]; i++){wrong_half = wrong_half.replace(inputbox.value[i], "")};
       words = String('<Correct>' + text.slice(0, input_half.length - wrong_half.length)+ '</Correct>' + '<False>' + wrong_half + '</False>' + text.slice(input_half.length - wrong_half.length, text.length));
-    document.getElementById("Words").innerHTML = words;
-  };
+      Words.innerHTML = words;
+  }
+});
+
+  // Mistake counter
+inputbox.addEventListener('input', function(event) {
+  if(Words.innerHTML.includes('<false>') & mistakes[0] == 0){
+    // mistakes [0,1]
+    mistakes[0] = 1
+    mistakes[1] += 1
+  }
+  if(!(Words.innerHTML.includes('<false>'))){
+    mistakes[0] = 0
+  }
+  Mistakes.innerHTML = "Mistakes: " + mistakes[1]
 });
