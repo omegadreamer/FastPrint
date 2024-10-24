@@ -20,6 +20,22 @@
             <button class="Button" id="W2" url="#">75</button>
             <button class="Button" id="W3" url="#">100</button>
         </div>
-        <h1 class="Mistakes" id="Mistakes">Mistakes: 0</h1>
+    </div>
+    <div class="results">
+        <h1 class="res" id="Mistakes">WRONG 0</h1>
+        <h1 class="res" id="WPM">WPM 0</h1>
+        <h1 class="res" id="CPM">CPM 0</h1>
+    </div>
+    <div class="info">
+        <h1>• CPM </h1>
+        <h2>
+            "characters per minute", here im using <br>
+            formul - "(chars - mistakes) / (seconds/60)".
+        </h2>
+        <h1>• WPM</h1>
+        <h2>
+            "words per minute", formul - "CPM/5"<br>
+            where "5" - average number of chars in a word.
+        </h2>
     </div>
 {% endblock %}

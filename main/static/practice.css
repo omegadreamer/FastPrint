@@ -46,6 +46,11 @@ body{
   color: rgb(65, 64, 64);
 }
 
+.ButtonBG{
+  display: inline-block;
+  background-color: rgb(36, 36, 36);
+}
+
 
 .Block{
   margin-left: auto;
@@ -58,7 +63,42 @@ body{
 }
 
 
-.ButtonBG{
-  display: inline-block;
-  background-color: rgb(36, 36, 36);
+.results{
+  color: rgb(92, 91, 91);
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  .res{
+    display: inline-block;
+  }
+}
+
+/*info*/
+.info{
+  
+  margin: auto;
+  width: 850px;
+  text-align: justify;
+  margin-top: 20%;
+  h2{
+    margin-left: 20px;
+    margin-top: -22px;
+  }
+  a{
+    color: #474747;
+  }
+}
+
+
+::-webkit-scrollbar {
+  width: .5rem;
+  -webkit-transition: none;
+  transition: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(56, 56, 56);
+  height: 25px;
+  -webkit-transition: none;
+  transition: none;
 }
