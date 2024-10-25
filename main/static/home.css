@@ -7,15 +7,10 @@ body{
     font: 700 16px "Roboto", sans-serif;
 }
 
-a{
-    color: rgb(5, 5, 5);
-}
-
 /*logo*/
 .FastPrint{
-    margin-top: 14%;
+    padding-top: 130px;
     text-align: center;
-
     h1, h1 span{
         font-size: 96px;
     }
@@ -36,7 +31,20 @@ a{
     }
 }
 
-/*3d button*/
+/*info*/
+.info{
+    padding-top: 330px;
+    text-align: justify;
+    h2{
+        margin-left: 20px;
+        margin-top: -22px;
+    }
+    a{
+        color: #474747;
+    }
+}
+
+/*button*/
 .Button{
     display: inline-block;
     padding: 5px 10px;
@@ -56,21 +64,6 @@ a{
   
 .Button:active{
     color: rgb(65, 64, 64);
-}
-
-/*info*/
-.info{
-    margin: auto;
-    width: 750px;
-    text-align: justify;
-    margin-top: 20%;
-    h2{
-        margin-left: 20px;
-        margin-top: -22px;
-    }
-    a{
-        color: #474747;
-    }
 }
 
 ::-webkit-scrollbar {

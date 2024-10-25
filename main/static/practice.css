@@ -7,24 +7,6 @@ body{
   font: 700 16px "Roboto", sans-serif;
 }
 
-
-.Words{
-  display: block;
-  width: 800px;
-
-  /*Font*/
-  font-size: 28px;
-  text-align: left;
-  False{
-    color: rgb(155, 83, 92);
-    text-decoration: underline;
-  }
-  Correct{
-    color: rgb(68, 68, 68);
-  }
-}
-
-
 .Button{
   display: inline-block;
   padding: 5px 10px;
@@ -51,12 +33,25 @@ body{
   background-color: rgb(36, 36, 36);
 }
 
+.Words{
+  display: block;
+  max-width: 900px;
+
+  /*Font*/
+  font-size: 28px;
+  text-align: left;
+  False{
+    color: rgb(155, 83, 92);
+    text-decoration: underline;
+  }
+  Correct{
+    color: rgb(68, 68, 68);
+  }
+}
 
 .Block{
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 17%;
-  width: 800px;
+  height: 500px;
+  padding-top: 130px;
   .Words{
     margin-bottom: 10px;
   }
@@ -65,27 +60,20 @@ body{
 
 .results{
   color: rgb(92, 91, 91);
-  margin-left: auto;
-  margin-right: auto;
-  width: 800px;
   .res{
     display: inline-block;
   }
 }
 
-/*info*/
 .info{
-  
-  margin: auto;
-  width: 850px;
+  padding-top: 330px;
   text-align: justify;
-  margin-top: 20%;
   h2{
-    margin-left: 20px;
-    margin-top: -22px;
+      margin-left: 20px;
+      margin-top: -22px;
   }
   a{
-    color: #474747;
+      color: #474747;
   }
 }
 

@@ -84,6 +84,7 @@ function Restart() {
   mistakes = [0,0]
 }Restart();
 
+
 // Restart button
 restart.addEventListener('click', Restart);
 
