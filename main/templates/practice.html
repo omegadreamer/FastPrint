@@ -2,6 +2,7 @@
 
 {% block head %}
     {% load static %}
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.3.0/math.min.js></script>
     <script type="module" src='{% static "practice.js" %}' defer></script>
     <link rel="stylesheet" href="{% static 'practice.css' %}">
 {% endblock %}
@@ -10,35 +11,22 @@
 
 {% block content %}
     <input type="text" class="InputBox" id="InputBox">
+    <div class="results">
+        <div class="res" id="WPM">WPM</div>
+        <div class="res" id="CPM">CPM</div>
+        <div class="res" id="Mistakes">Mistakes</div>
+        <div class="res" id="Time">Time</div>
+    </div>
     <div class="Block" id="Block">
         <div class="Words" id="Words"></div>
         <button class="Button" id="Restart">Restart</button>
         <button class="Button" id="Lenguage" url="#">Eng</button>
-        <div class="ButtonBG" id="WordsCount">
-            <button class="Button" id="W3" url="#">5</button>
-            <button class="Button" id="W3" url="#">10</button>
-            <button class="Button" id="W0" url="#">25</button>
-            <button class="Button" id="W1" url="#">50</button>
-            <button class="Button" id="W2" url="#">75</button>
-            <button class="Button" id="W3" url="#">100</button>
+        <div class="buttonBG" id="WordsCount">
+            <button class="Button" id="W4" url="#">5</button>
+            <button class="Button" id="W0" url="#">10</button>
+            <button class="Button" id="W1" url="#">25</button>
+            <button class="Button" id="W2" url="#">50</button>
+            <button class="Button" id="W3" url="#">75</button>
         </div>
-        <div class="results">
-            <h1 class="res" id="WPM">WPM 0</h1>
-            <h1 class="res" id="CPM">CPM 0</h1>
-            <h1 class="res" id="Mistakes">Mistakes 0</h1>
-            <h1 class="res" id="Time">Time 0</h1>
-        </div>
-    </div>
-    <div class="info">
-        <h1>• CPM </h1>
-        <h2>
-            "characters per minute", here im using <br>
-            formul - "(chars - mistakes) / (seconds/60)".
-        </h2>
-        <h1>• WPM</h1>
-        <h2>
-            "words per minute", formul - "CPM/5"<br>
-            where "5" - average number of chars in word.
-        </h2>
     </div>
 {% endblock %}

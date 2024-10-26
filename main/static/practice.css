@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 body{
-  box-sizing: border-box;
+  display: flex;
   background: #191b1b;
   color: rgb(116, 116, 116);
   font: 700 16px "Roboto", sans-serif;
@@ -28,51 +28,49 @@ body{
   color: rgb(65, 64, 64);
 }
 
-.ButtonBG{
+.buttonBG{
   display: inline-block;
   background-color: rgb(36, 36, 36);
 }
 
-.Words{
-  display: block;
-  max-width: 900px;
+.InputBox{
+  opacity: 0;
+}
 
-  /*Font*/
+.Block{
+  position: absolute;
+  max-width: 700px;
+  min-width: 370px;
+  margin: 20% 30% 30% 30%;
+  
+}
+
+.Words{
+  margin-bottom: 10px;
   font-size: 28px;
-  text-align: left;
-  False{
+  text-align: justify;
+  false{
     color: rgb(155, 83, 92);
     text-decoration: underline;
   }
-  Correct{
+  correct{
     color: rgb(68, 68, 68);
   }
 }
 
-.Block{
-  height: 500px;
-  padding-top: 130px;
-  .Words{
-    margin-bottom: 10px;
-  }
-}
-
 .results{
+  padding-top: 20%;
+  position: absolute;
   color: rgb(92, 91, 91);
+  font-size: 28px;
+  width: 170px;
   .res{
-    display: inline-block;
-  }
-}
-
-.info{
-  padding-top: 330px;
-  text-align: justify;
-  h2{
-      margin-left: 20px;
-      margin-top: -22px;
-  }
-  a{
-      color: #474747;
+    background-color:rgb(36, 36, 36);
+    padding:6px;
+    margin:5px;
+    span{
+      color: rgb(85, 136, 106);
+    }
   }
 }
 

@@ -16,7 +16,7 @@ let words_count = 25;
 let current_lenguage = 1;
 let test_status = false;
 
-// Stats
+// Stats 
 let mistakes = [[0],[0],[]];
 let timer = 0;
 
@@ -38,22 +38,31 @@ setInterval(function() {
     setTimeout(timer += 1);
   }}, 1000);
 
+// Focus
+setInterval(function() {
+  if(test_status != "end") {
+    input_box.focus()
+  }else{
+    input_box.blur()
+  }}, 10);
+
 // Random words from 'WordList' function
 function GetRandomWords() {
 
   let cur_list = lenguages[String(current_lenguage)]['list']
-  input_box.value = "";
-  text = "";
+  let fut_text = "";
 
   for (let i = 0; i < words_count; i++) {
-    text += cur_list[Math.floor(Math.random() * cur_list.length)] + " ";
+    fut_text += cur_list[Math.floor(Math.random() * cur_list.length)] + " ";
   }
+
+  text = fut_text
   return text;
 };
 
 // Active words amount
 document.getElementById("WordsCount").addEventListener("click", function(event) {
-  if (words_count != event.target.innerHTML){
+  if (words_count != event.target.innerHTML & event.target.innerHTML % 5 == 0) {
     words_count = event.target.innerHTML;
     Restart();
   };
@@ -61,7 +70,7 @@ document.getElementById("WordsCount").addEventListener("click", function(event) 
 
 // Lenguage Switch
 lenguage.addEventListener('click', function(event) {
-  if (current_lenguage != Object.keys(lenguages).length -1){
+  if (current_lenguage != Object.keys(lenguages).length -1) {
     current_lenguage += 1;
   }else{
     current_lenguage = 0;
@@ -78,13 +87,13 @@ input_box.addEventListener('input', function(event) {
   let words = "";
 
   // Go to Finish
-  if(input_box.value == text.slice(0, text.length-1)){
+  if(input_box.value == text.slice(0, text.length-1)) {
     Words.innerHTML = '<correct>' + text + '</correct>';
     FinishTyping();
   }
 
   // Check correct/wrong half
-  else if(text.slice(0, input_half.length) == input_box.value){
+  else if(text.slice(0, input_half.length) == input_box.value) {
     words = String('<correct>' + text.slice(0, input_half.length) + '</correct>' + text.slice(input_half.length, text.length));
     Words.innerHTML = words;
   }else{
@@ -95,12 +104,11 @@ input_box.addEventListener('input', function(event) {
   }
 
   // Mistake counter
-  if(Words.innerHTML.includes('<false>') & mistakes[0][0] == false){
+  if(Words.innerHTML.includes('<false>') & mistakes[0][0] == false) {
     for (let i = 0; i<input_box.value.length ;i++){
       if (text[i] != input_box.value[i]){
         mistakes[2].push(i)
-      };
-    };
+      };};
     mistakes[0][0] = true;
     mistakes[1][0] += 1;
   }else if(!(Words.innerHTML.includes('<false>'))){
@@ -111,17 +119,19 @@ input_box.addEventListener('input', function(event) {
 // Finish of typing
 function FinishTyping() {
 
-  // - CPM & WPM
-  let correct_words = text.length - mistakes[1][0];
-  CPM.innerHTML = 'CPM ' + correct_words / (timer/60);
-  WPM.innerHTML = 'WPM ' + (correct_words / (timer/60)) / 5;
-  Mistakes.innerHTML = "Mistakes " + mistakes[1][0];
-  Time.innerHTML = "Time " + timer;
+  // Unfocus from input
+  test_status = "end"
   
+  // - CPM & WPM
+  CPM.innerHTML = CPM.innerHTML + ' <span>' + Math.round((text.length - mistakes[1][0]) / (timer/60)) + '</span>';
+  WPM.innerHTML = WPM.innerHTML + ' <span>' + Math.round(((text.length - mistakes[1][0]) / (timer/60)) / 5) + '</span>'; 
+  Mistakes.innerHTML = Mistakes.innerHTML + ' <span>' + mistakes[1][0] + '</span>';
+  Time.innerHTML = Time.innerHTML + ' <span>' + timer + '</span>';
+
   // - Change text view
-  mistakes[2] = [...new Set(mistakes[2])];  
+  mistakes[2] = [...new Set(mistakes[2])];
   text = String(text).split('');
-  for(let i = 0; i < mistakes[2].length; i++){
+  for(let i = 0; i < mistakes[2].length; i++) {
     text[mistakes[2][i]] = String('<false>' + text[mistakes[2][i]] + '</false>');
     Words.innerHTML = text.join("");
   };
@@ -129,9 +139,14 @@ function FinishTyping() {
 
 // Restart
 function Restart() {
+  input_box.value = ""
   test_status = false;
   timer = 0;
   Words.innerHTML = GetRandomWords();
   mistakes = [[0],[0],[]];
+  CPM.innerHTML = "CPM"
+  WPM.innerHTML = "WPM"
+  Mistakes.innerHTML = "Mistakes"
+  Time.innerHTML = "Time"
 }Restart();
 restart.addEventListener('click', Restart);
