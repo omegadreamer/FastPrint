@@ -42,7 +42,6 @@ body{
   max-width: 700px;
   min-width: 370px;
   margin: 20% 30% 30% 30%;
-  
 }
 
 .Words{
@@ -61,15 +60,23 @@ body{
 .results{
   padding-top: 20%;
   position: absolute;
-  color: rgb(92, 91, 91);
   font-size: 28px;
-  width: 170px;
-  .res{
+  .stat{
     background-color:rgb(36, 36, 36);
     padding:6px;
     margin:5px;
-    span{
-      color: rgb(85, 136, 106);
+    .name-tag{
+      color: rgb(92, 91, 91);
+      display: inline-block;
+      background-color:rgb(36, 36, 36);
+      width: 70px;
+    }
+    .value{
+      text-align: right;
+      display: inline-block;
+      background-color:rgb(36, 36, 36);
+      min-width: 50px;
+      color: rgb(82, 131, 103);
     }
   }
 }

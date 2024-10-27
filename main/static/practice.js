@@ -123,10 +123,10 @@ function FinishTyping() {
   test_status = "end"
   
   // - CPM & WPM
-  CPM.innerHTML = CPM.innerHTML + ' <span>' + Math.round((text.length - mistakes[1][0]) / (timer/60)) + '</span>';
-  WPM.innerHTML = WPM.innerHTML + ' <span>' + Math.round(((text.length - mistakes[1][0]) / (timer/60)) / 5) + '</span>'; 
-  Mistakes.innerHTML = Mistakes.innerHTML + ' <span>' + mistakes[1][0] + '</span>';
-  Time.innerHTML = Time.innerHTML + ' <span>' + timer + '</span>';
+  document.getElementById("value_CPM").innerHTML = Math.round((text.length - mistakes[1][0]) / (timer/60));
+  document.getElementById("value_WPM").innerHTML = Math.round(((text.length - mistakes[1][0]) / (timer/60)) / 5); 
+  document.getElementById("value_Mistakes").innerHTML = mistakes[1][0];
+  document.getElementById("value_Timer").innerHTML = timer;
 
   // - Change text view
   mistakes[2] = [...new Set(mistakes[2])];
@@ -139,14 +139,14 @@ function FinishTyping() {
 
 // Restart
 function Restart() {
+  document.getElementById("value_CPM").innerHTML = ""
+  document.getElementById("value_WPM").innerHTML = ""
+  document.getElementById("value_Mistakes").innerHTML = ""
+  document.getElementById("value_Timer").innerHTML = ""
   input_box.value = ""
   test_status = false;
   timer = 0;
   Words.innerHTML = GetRandomWords();
   mistakes = [[0],[0],[]];
-  CPM.innerHTML = "CPM"
-  WPM.innerHTML = "WPM"
-  Mistakes.innerHTML = "Mistakes"
-  Time.innerHTML = "Time"
 }Restart();
 restart.addEventListener('click', Restart);
