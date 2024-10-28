@@ -10,7 +10,8 @@
 {% block title %}FastPrint - Practice{% endblock %}
 
 {% block content %}
-    <input type="text" class="InputBox" id="InputBox">
+    <input type="text" class="InputBox" id="InputBox" onpaste="return false;">
+    <a href="home" class="Home"><img src="{% static 'images/home.png' %}" alt="home" width="28px" height="28px"> </a>
     <div class="results">
 
         <div class="stat" id="WPM">
@@ -24,7 +25,7 @@
         </div>
 
         <div class="stat" id="Mistakes">
-            <div class="name-tag"> <img src="{% static 'images/mistake.png' %}" alt="Uncorrect" width="28px" height="28px"> </div>
+            <div class="name-tag"> <img src="{% static 'images/mistake.png' %}" alt="uncorrect" width="28px" height="28px"> </div>
             <div class="value" id="value_Mistakes"></div>
         </div>
 
@@ -32,18 +33,17 @@
             <div class="name-tag"> <img src="{% static 'images/timer.png' %}" alt="timer" width="28px" height="28px"> </div>
             <div class="value" id="value_Timer"></div>
         </div>
-
     </div>
     <div class="Block" id="Block">
         <div class="Words" id="Words"></div>
-        <button class="Button" id="Restart"> <img src="{% static 'images/restart.png' %}" alt="Restart" width="19px" height="19px"> </button>
+        <button class="Button" id="Restart"> <img src="{% static 'images/restart.png' %}" alt="restart" width="19px" height="19px"> </button>
         <button class="Button" id="Lenguage" url="#">Eng</button>
         <div class="buttonBG" id="WordsCount">
-            <button class="Button">5</button>
             <button class="Button">10</button>
             <button class="Button">25</button>
             <button class="Button">50</button>
             <button class="Button">75</button>
         </div>
     </div>
+    
 {% endblock %}

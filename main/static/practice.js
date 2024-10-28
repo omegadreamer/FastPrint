@@ -139,11 +139,11 @@ function FinishTyping() {
 
 // Restart
 function Restart() {
-  document.getElementById("value_CPM").innerHTML = ""
-  document.getElementById("value_WPM").innerHTML = ""
-  document.getElementById("value_Mistakes").innerHTML = ""
-  document.getElementById("value_Timer").innerHTML = ""
-  input_box.value = ""
+  document.getElementById("value_CPM").innerHTML = "";
+  document.getElementById("value_WPM").innerHTML = "";
+  document.getElementById("value_Mistakes").innerHTML = "";
+  document.getElementById("value_Timer").innerHTML = "";
+  input_box.value = "";
   test_status = false;
   timer = 0;
   Words.innerHTML = GetRandomWords();
